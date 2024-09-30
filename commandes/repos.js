@@ -4,7 +4,7 @@ const { zokou } = require("../framework/zokou");
 
 zokou({ nomCom: "repo", catégorie:"Général", reaction: "⚙️", nomFichier: __filename }, async (dest, zk, commandeOptions) => {
   const githubRepo = 'https://api.github.com/repos/Fred1e/LUCKY_MD';
-  const img = 'https://telegra.ph/file/926c7a8ad7ff624c144b7.jpg';
+  const img = 'https://files.catbox.moe/xee8ol.jpg';
 
   try {
     const response = await fetch(githubRepo);
@@ -21,27 +21,27 @@ zokou({ nomCom: "repo", catégorie:"Général", reaction: "⚙️", nomFichier: 
       const releaseDate = new Date(data.created_at).toLocaleDateString('en-GB');
       const lastUpdateDate = new Date(data.updated_at).toLocaleDateString('en-GB');
 
-      const gitdata = `*hellow whatsaap user
-this is* *LUCKY_MD V7.*\n support our channel *by*,  https://whatsapp.com/channel/0029VaihcQv84Om8LP59fO3f
+      const gitdata = ` *Hellow User
+This Is* *LUCKY_MD.*\n _Support Our Channel_ *by*,  https://whatsapp.com/channel/0029VaihcQv84Om8LP59fO3f
 
-╭─────────────────────➳
-│╭────────────────────➳
-││ 🗼 *REPOSITORY:* ${data.html_url}
-││ 🌟 *STARS:* ${repoInfo.stars}
-││ 🧧 *FORKS:* ${repoInfo.forks}
-││ 📅 *RELEASE DATE:* ${releaseDate}
-││🕐 *UPDATE ON:* ${repoInfo.lastUpdate}
-││ 👨‍💻 *OWNER:* *Fredie tech*
-││ 💞 *THEME:* *FREDI*
-││ 🥰 *ENJOY TO USE LUCKY MD V7*
-│╰────────────────────➳
-│╭──────────────────❍ 
-││  ╭───────────────➳
-││  │ _*Made With Fredie Tech*_
-││  ╰───────────────➳
-│╰──────────────────❍ 
-╰─────────────────────➳ 
- ❍━━━━━━━━━━━━━━━━━━❍`;
+🗼 *REPOSITORY:* ${data.html_url}
+
+🕐 *UPDATE ON:* ${repoInfo.lastUpdate}
+⊷━━━━━━☆•∞•☆━━━━━━⊷  
+
+ ╭━━═✺ *FREDIE* ✺═━━⊷
+ ┊│┌═━━⊷•∞•⊷━━─⊛
+ ┌┤┊❁*VISITORS:* ${repoInfo.visitors}
+ ┊│┊❁ *STARS:* ${repoInfo.stars}
+ ┊│┊❁ *FORKS:* ${repoInfo.forks}
+ ┊│┊❁ *RELEASE DATE:* ${releaseDate}
+ ┌┤┊❁ *OWNER:* *Fredie tech*
+ ┊│┊❁ *THEME:* *FREDI*
+ ┊│┊❁ *ENJOY TO USE LUCKY MD*
+ ┊│└═━━⊷•∞•⊷━━─⊛
+ ╰━━━═⊷✺•∞•✺⊷═━━━⊷ 
+ 
+ > Dont Forget Fork And Star Please `;
 
       await zk.sendMessage(dest, { image: { url: img }, caption: gitdata });
     } else {
